@@ -26,13 +26,10 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         marginTop:10,
         marginBottom: 10,
-        height: 40,
         borderBottomColor: Colors.input,
     },
     inputBox:{
         padding: 5,
-        height: 35,
-        marginStart: 10,
         fontSize:16
     }  
 })

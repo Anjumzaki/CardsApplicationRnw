@@ -1,5 +1,6 @@
 const Images = {
-    SignInBackground: require('../../assets/sign-background.png')
+    logo: require('../../assets/logo.png'),
+    SignInBackground: require('../../assets/sign-background.png'),
 }
 
 export default Images;

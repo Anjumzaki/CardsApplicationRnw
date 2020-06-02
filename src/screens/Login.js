@@ -4,6 +4,8 @@ import {StyleSheet, View, TextInput, Text, Image, Dimensions, ImageBackground} f
 import Images from '../constants/Images';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import Colors from '../constants/Colors';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
@@ -22,6 +24,11 @@ class Login extends Component {
                     style={styles.Background}
                 >
                     <View style={styles.Card}>
+                        <Image
+                            source = {Images.logo}
+                            resizeMode= 'contain'
+                            style={styles.Logo}
+                        />
                         <Input 
                             placeholder= 'Email'
                         />
@@ -30,7 +37,11 @@ class Login extends Component {
                         />
                         <Button 
                             ButtonText= 'Sign In'
-                        /> 
+                        />
+
+                        <TouchableOpacity>
+                            <Text>Dont have account?<Text style={{color: Colors.primary, fontWeight: "bold"}}> SIGN UP</Text></Text>
+                        </TouchableOpacity> 
                     </View>
                 </ImageBackground>
             </View>
@@ -52,6 +63,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
+    },
+    Logo:{
+        height:100,
+        width: 100
     }
 })
 

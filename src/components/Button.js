@@ -27,15 +27,16 @@ export default (props) => {
 
 const styles = StyleSheet.create({
     Button:{
-        // height: 200,
+        marginTop: 10,
+        marginBottom: 10
     },
     buttonContainer: {
         width: 150,
         paddingVertical:10,
         paddingHorizontal:20,
         backgroundColor: Colors.primary,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20
+        borderBottomLeftRadius: 25,
+        borderBottomRightRadius: 25
     },
     buttonText:{
         textAlign: 'center',
