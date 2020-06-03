@@ -24,8 +24,6 @@ const styles = StyleSheet.create({
     Input:{
         width:'70%',
         borderBottomWidth: 1,
-        marginTop:10,
-        marginBottom: 10,
         borderBottomColor: Colors.input,
     },
     inputBox:{

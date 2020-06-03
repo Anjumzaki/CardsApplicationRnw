@@ -3,12 +3,12 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Login from './src/screens/Login';
+import Navigation from './src/navigator/Navigation';
 
 const App = ()  => {
   return (
     <>
-      <Login />
+      <Navigation />
     </>
   );
 };

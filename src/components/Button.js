@@ -8,17 +8,17 @@ import {
 
 import Colors from '../constants/Colors';
 
-export default (props) => {
+export default ({style, onPress, ButtonText}) => {
     return(
         <View
-            style={[props.style, styles.Button]}     
+            style={[style, styles.Button]}     
         >
             <TouchableOpacity 
                 style={styles.buttonContainer}
                 activeOpacity= {0.7}
-                onPress={props.onPress}>
+                onPress={onPress}>
                 <Text style={styles.buttonText}>
-                    {props.ButtonText}
+                    {ButtonText}
                 </Text>
             </TouchableOpacity>
     </View>
