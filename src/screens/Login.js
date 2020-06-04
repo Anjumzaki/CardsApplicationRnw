@@ -25,7 +25,7 @@ class Login extends Component {
             alert('Please enter email and password')
         }
         else{
-            this.props.navigation.navigate('Signup')
+            this.props.navigation.navigate('DrawerScreen')
         }
      }
 

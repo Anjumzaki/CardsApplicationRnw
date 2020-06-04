@@ -3,12 +3,15 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Navigation from './src/navigator/Navigation';
+import Navigation, { AuthNavigator, AppNavigator } from './src/navigator/Navigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = ()  => {
   return (
     <>
-      <Navigation />
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
     </>
   );
 };
