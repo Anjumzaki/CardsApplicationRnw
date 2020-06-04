@@ -10,7 +10,8 @@ import Colors from '../../constants/Colors'
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-export default (props) => {
+export default class DrawerList extends Component {
+    render(props) {
         return (
         <View style={{flex: 1}}>
             <DrawerContentScrollView {...props} showsVerticalScrollIndicator={false}>
@@ -30,11 +31,12 @@ export default (props) => {
                         <Image
                             style={styles.icon}
                             resizeMode= 'contain'
-                            source={Images.User_Icon_Green}
+                            source={Images.activeAccount}
                         />
                         <DrawerItem
                             labelStyle={styles.label}
                             label="My Account"
+                            onPress={() => this.props.navigation.navigate('Account')}
                         />
                     </View>
 
@@ -59,6 +61,7 @@ export default (props) => {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="Reminders"
+                            onPress={() => this.props.navigation.navigate('Reminders')}
                         />
                     </View>
 
@@ -71,6 +74,7 @@ export default (props) => {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="My Contacts"
+                            onPress={() => this.props.navigation.navigate('Contacts')}
                         />
                     </View>
 
@@ -83,6 +87,7 @@ export default (props) => {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="Order"
+                            onPress={() => this.props.navigation.navigate('Orders')}
                         />
                     </View>
 
@@ -137,7 +142,7 @@ export default (props) => {
                 </View>
             </DrawerContentScrollView>
         </View>
-    )
+    )}
 }
 
 const styles = StyleSheet.create({

@@ -1,20 +1,15 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, TextInput, Text, Image, Dimensions, ImageBackground} from 'react-native';
-import Images from '../constants/Images';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Colors from '../constants/Colors';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-class Login extends Component {
+class Account extends Component {
 
     render() {
         return (
             <View style={styles.Container}>
-                <Text>Drawer</Text>
+                <Text>Account</Text>
             </View>
         );
     }
@@ -30,4 +25,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Login;
+export default Account;

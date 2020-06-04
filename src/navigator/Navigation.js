@@ -1,23 +1,100 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {Image, TouchableOpacity} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Login from '../screens/Login';
-import Signup from '../screens/Signup'
-import DrawerList from '../screens/drawer/DrawerList'
-import DrawerScreen from '../screens/Drawer'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account } from '../screens';
+import Images from '../constants/Images';
+import Colors from  '../constants/Colors'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+const BottomTab = createBottomTabNavigator();
 
-function MyDrawer() {
-    return (
-    <Drawer.Navigator
-        drawerContent={ props => <DrawerList {...props}/> }
+createBottomTab  = () => {
+    return(
+    <BottomTab.Navigator
+        initialRouteName="Home"
+        tabBarOptions={{activeTintColor: Colors.primary}}
+    screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+            let activeIcon, inactiveIcon;
+
+            if(route.name == 'Home'){
+                activeIcon = Images.activeHome;
+                inactiveIcon = Images.inactiveHome;
+            }
+            else if(route.name == 'Contacts'){
+                activeIcon = Images.activeContacts;
+                inactiveIcon = Images.inactiveContacts
+            }
+            else if(route.name == 'Reminders'){
+                activeIcon = Images.Reminders;
+                inactiveIcon = Images.inactiveReminders;
+            }
+            else if(route.name == 'Orders'){
+                activeIcon = Images.Orders;
+                inactiveIcon = Images.inactiveOrders;
+            }
+            else if(route.name == 'Account'){
+                activeIcon = Images.activeAccount;
+                inactiveIcon = Images.inactiveAccount; 
+            }
+          
+            return <Image 
+                    source={ color == '#8E8E8F' ? inactiveIcon : activeIcon} style={{width: size, height: size}} 
+                    resizeMode={'contain'}
+                    />
+        }
+      })}
     >
-        <Drawer.Screen name="DrawerScreen" component={DrawerScreen} />
-      </Drawer.Navigator>
+        <BottomTab.Screen name="Contacts" component={Contacts} />
+        <BottomTab.Screen name="Reminders" component={Reminders} />
+        <BottomTab.Screen name="Home" component={Home}/>
+        <BottomTab.Screen name="Orders" component={Orders} />
+        <BottomTab.Screen name="Account" component={Account} />
+    </BottomTab.Navigator>
+)
+}
+
+StackNavigator= ({navigation}) => {
+    return (
+    <Stack.Navigator>
+        <Stack.Screen 
+            name="DrawerScreen" 
+            children={createBottomTab} 
+            options={{ 
+                headerTitleAlign: 'center',
+                headerBackTitle:'none',
+                headerTitle: '',
+                headerRight: () => (
+                    <TouchableOpacity 
+                        style={{padding:15}}
+                        onPress = {() => alert('Notifications')}
+                    >
+                        <Image
+                            source={Images.Notification}
+                            resizeMode= 'contain'
+                            style={{height:25, width:25}} 
+                        />
+                    </TouchableOpacity>
+                ),
+                headerLeft:  () => (
+                    <TouchableOpacity 
+                        style={{padding:15}}
+                        onPress = {() => navigation.openDrawer()}
+                    >
+                        <Image
+                            source={Images.menu}
+                            resizeMode= 'contain'
+                            style={{height:25, width:25}} 
+                        />
+                    </TouchableOpacity>
+                ),
+            }}
+        />
+      </Stack.Navigator>
     );
   }
 
@@ -38,12 +115,10 @@ export const AuthNavigator = () => (
 
 export const AppNavigator = () => {
     return(
-            <Stack.Navigator>
-                <Stack.Screen
-                    name = "DrawerScreen"
-                    children={MyDrawer}
-                    options={{headerShown: false}}
-                />
-            </Stack.Navigator>
+    <Drawer.Navigator
+        drawerContent={ props => <DrawerList {...props}/> }
+    >
+        <Drawer.Screen name="DrawerScreen" children={StackNavigator} />
+      </Drawer.Navigator>
     )
 }
