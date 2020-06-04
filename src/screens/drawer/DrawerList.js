@@ -4,8 +4,7 @@ import {
     DrawerContentScrollView,
     DrawerItem,
 } from '@react-navigation/drawer'
-import Images from '../../constants/Images';
-import Colors from '../../constants/Colors'
+import {Colors, Images} from '../../constants';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;

@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, TextInput, Text, Image, Dimensions, ImageBackground} from 'react-native';
-import Images from '../constants/Images';
-import Input from '../components/Input';
-import Button from '../components/Button';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Colors from '../constants/Colors';
+import {StyleSheet, View, TextInput, Text, Image, Dimensions, ImageBackground, TouchableOpacity} from 'react-native';
+import {Input, Button} from '../components';
+import {Colors, Images} from '../constants';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;

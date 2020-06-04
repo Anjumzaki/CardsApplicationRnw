@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, TextInput, Text, Image, Dimensions, ImageBackground} from 'react-native';
-import { DrawerList } from '.';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
