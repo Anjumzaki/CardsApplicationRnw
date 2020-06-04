@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, TouchableOpacity, Dimensions, Text} from 'react-native';
 import {Colors} from '../constants'
-import {Button} from '../components'
+import {SmallButton} from '../components'
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
@@ -42,9 +42,9 @@ export default ({style, onPress, cardImage, favouriteImage}) => {
                     <Text style={styles.Price}>
                         Sold: 10/50
                     </Text>
-                    <Text style={styles.Price}>
-                        Send
-                    </Text>
+                    <SmallButton
+                        ButtonText= 'Send'
+                    />
                 </View>
             </View>
 
@@ -101,5 +101,6 @@ const styles = StyleSheet.create({
     FavouriteIcon:{
         height:20,
         width:20
-    }  
+    },
+      
 })

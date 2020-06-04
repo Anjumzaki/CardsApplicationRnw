@@ -25,17 +25,20 @@ class Home extends Component {
     render() {
         return (
             <ScrollView>
-                <View style={styles.Search}>
-                    <TextInput 
-                        style={styles.inputBox}
-                        placeholder = 'Filter Cards'
-                        // onChangeText={ onChangeText }
-                        // value = { value }
-                    />
-                    <Image
-                        source={Images.Filter}
-                        style={{height:15, width: 15}}
-                    />
+                <View style={styles.SearchContainer}>
+                    <View style={styles.Search}>
+                        <TextInput 
+                            style={styles.inputBox}
+                            placeholder = 'Filter Cards'
+                            // onChangeText={ onChangeText }
+                            // value = { value }
+                        />
+                        <Image
+                            source={Images.Filter}
+                            style={{height:20, width: 20}}
+                            resizeMode= 'contain'
+                        />
+                    </View>
                 </View>
                 
                 <View style={styles.Container}>
@@ -49,9 +52,17 @@ class Home extends Component {
                     />
 
                 </View>
+                
                 <View style={styles.Container}>
-                    <Card />
-                    <Card />
+                    <Card 
+                        favouriteImage= {this.state.favouriteImage}
+                        onPress={() => this.handleFavourite(this.state.favourite)}     
+                    />
+                    <Card 
+                        favouriteImage= {this.state.favouriteImage}
+                        onPress={() => this.handleFavourite(this.state.favourite)}          
+                    />
+
                 </View>
             </ScrollView>
         );
@@ -67,19 +78,25 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginVertical: 10
     },
-    Search:{
-        width: '80%',
-        marginLeft: '10%',
-        marginTop: 20,
-        marginBottom: 10
-    },
-    inputBox:{
-        padding: 5,
-        fontSize:16,
+    SearchContainer:{
         borderColor: Colors.primary,
         borderWidth:2,
         height: 40,
-        borderRadius: 10
+        borderRadius: 10,
+        width: '90%',
+        marginTop: 20,
+        marginBottom: 10,
+        marginLeft: '5%'
+    },
+    Search:{
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    inputBox:{
+        width: '86%',
+        padding: 5,
+        fontSize:16,
     }  
 })
 

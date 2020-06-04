@@ -9,7 +9,7 @@ class Orders extends Component {
     render() {
         return (
             <View style={styles.Container}>
-                <Text>Orders</Text>
+                <Text>PAST ORDERS</Text>
             </View>
         );
     }
@@ -20,8 +20,6 @@ const styles = StyleSheet.create({
         width: screenWidth,
         height: screenHeight,
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
     },
 })
 
