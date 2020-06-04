@@ -22,7 +22,9 @@ const Images = {
     activeContacts: require('../../assets/activeContacts.png'),
     inactiveContacts: require('../../assets/inactiveContacts.png'),
     inactiveOrders: require('../../assets/inactiveOrders.png'),
-    inactiveAccount: require('../../assets/inactiveAccount.png')
+    inactiveAccount: require('../../assets/inactiveAccount.png'),
+    Fav_Fill: require('../../assets/Fav_Fill.png'),
+    Fav_Unfill: require('../../assets/Fav_Unfill.png')
 }
 
 export default Images;

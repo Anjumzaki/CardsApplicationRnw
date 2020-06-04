@@ -3,7 +3,6 @@ const Colors = {
     white: '#fff',
     black: '#000',
     input: '#b2b2b2',
-    success: '#3BFF00',
     grey: '#959595',
     darkgrey: '#272727',
 }

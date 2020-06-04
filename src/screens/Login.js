@@ -41,10 +41,12 @@ class Login extends Component {
                             style={styles.Logo}
                         />
                         <Input 
+                            style={{marginTop: 10}}
                             placeholder= 'Email'
                             onChangeText = {this.handleEmail}
                         />
                         <Input 
+                            style={{marginTop: 10}}
                             placeholder= 'Password'
                             onChangeText = {this.handlePassword}
                         />
