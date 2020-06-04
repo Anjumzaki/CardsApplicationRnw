@@ -43,6 +43,7 @@ export default ({style, onPress, cardImage, favouriteImage}) => {
                         Sold: 10/50
                     </Text>
                     <SmallButton
+                        style={{backgroundColor: Colors.white, color: Colors.primary}}
                         ButtonText= 'Send'
                     />
                 </View>

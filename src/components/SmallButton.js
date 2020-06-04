@@ -8,22 +8,22 @@ import {
 
 import Colors from '../constants/Colors';
 
-export default ({ onPress, ButtonText}) => {
+export default ({ buttonPress, ButtonText, style}) => {
     return(
         <TouchableOpacity 
-            style={styles.Button}
-            onPress={onPress}
+            activeOpacity= {0.5}
+            style={[styles.Button, style]}
+            onPress={buttonPress}
         >
-            <Text style={{fontSize: 14, color: Colors.primary}}>{ButtonText}</Text>
+            <Text style={[style, {fontSize: 14}]}>{ButtonText}</Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     Button:{
-        backgroundColor: Colors.white,
         paddingHorizontal: 10,
-        paddingVertical:2,
-        borderRadius: 50
+        paddingVertical:3,
+        borderRadius: 20
     }
 })

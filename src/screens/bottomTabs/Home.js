@@ -24,44 +24,47 @@ class Home extends Component {
 
     render() {
         return (
-            <ScrollView>
-                <View style={styles.SearchContainer}>
-                    <View style={styles.Search}>
-                        <TextInput 
-                            style={styles.inputBox}
-                            placeholder = 'Filter Cards'
-                            // onChangeText={ onChangeText }
-                            // value = { value }
-                        />
-                        <Image
-                            source={Images.Filter}
-                            style={{height:20, width: 20}}
-                            resizeMode= 'contain'
-                        />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.Container}>
+                    <View style={styles.SearchContainer}>
+                        <View style={styles.Search}>
+                            <TextInput 
+                                style={styles.inputBox}
+                                placeholder = 'Filter Cards'
+                                // onChangeText={ onChangeText }
+                                // value = { value }
+                            />
+                            <Image
+                                source={Images.Filter}
+                                style={{height:20, width: 20}}
+                                resizeMode= 'contain'
+                            />
+                        </View>
                     </View>
-                </View>
-                
-                <View style={styles.Container}>
-                    <Card 
-                        favouriteImage= {this.state.favouriteImage}
-                        onPress={() => this.handleFavourite(this.state.favourite)}     
-                    />
-                    <Card 
-                        favouriteImage= {this.state.favouriteImage}
-                        onPress={() => this.handleFavourite(this.state.favourite)}          
-                    />
+                    
+                    <View style={styles.CardContainer}>
+                        <Card 
+                            favouriteImage= {this.state.favouriteImage}
+                            onPress={() => this.handleFavourite(this.state.favourite)}     
+                        />
+                        <Card 
+                            favouriteImage= {this.state.favouriteImage}
+                            onPress={() => this.handleFavourite(this.state.favourite)}          
+                        />
 
-                </View>
-                
-                <View style={styles.Container}>
-                    <Card 
-                        favouriteImage= {this.state.favouriteImage}
-                        onPress={() => this.handleFavourite(this.state.favourite)}     
-                    />
-                    <Card 
-                        favouriteImage= {this.state.favouriteImage}
-                        onPress={() => this.handleFavourite(this.state.favourite)}          
-                    />
+                    </View>
+                    
+                    <View style={styles.CardContainer}>
+                        <Card 
+                            favouriteImage= {this.state.favouriteImage}
+                            onPress={() => this.handleFavourite(this.state.favourite)}     
+                        />
+                        <Card 
+                            favouriteImage= {this.state.favouriteImage}
+                            onPress={() => this.handleFavourite(this.state.favourite)}          
+                        />
+
+                    </View>
 
                 </View>
             </ScrollView>
@@ -71,6 +74,11 @@ class Home extends Component {
 
 const styles = StyleSheet.create({
     Container:{
+        width: screenWidth,
+        flex: 1,
+        alignItems: "center"
+    },
+    CardContainer:{
         width: screenWidth,
         flex: 1,
         flexDirection: "row",
@@ -86,7 +94,6 @@ const styles = StyleSheet.create({
         width: '90%',
         marginTop: 20,
         marginBottom: 10,
-        marginLeft: '5%'
     },
     Search:{
         flexDirection: "row",
