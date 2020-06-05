@@ -4,7 +4,7 @@ import {Image, TouchableOpacity} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account } from '../screens';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications } from '../screens';
 import Images from '../constants/Images';
 import Colors from  '../constants/Colors'
 
@@ -81,7 +81,7 @@ StackNavigator= ({navigation}) => {
                 headerRight: () => (
                     <TouchableOpacity 
                         style={{padding:15}}
-                        onPress = {() => alert('Notifications')}
+                        onPress = {() => navigation.navigate('Notifications')}
                     >
                         <Image
                             source={Images.Notification}
@@ -102,6 +102,18 @@ StackNavigator= ({navigation}) => {
                         />
                     </TouchableOpacity>
                 ),
+            }}
+        />
+        <Stack.Screen
+            name = "Notifications"
+            component={Notifications}
+            options={{
+                headerBackTitle:'none',
+                headerTitle: 'Notifications',
+                headerTintColor: Colors.white,
+                headerStyle:{
+                    backgroundColor: Colors.primary
+                }
             }}
         />
       </Stack.Navigator>

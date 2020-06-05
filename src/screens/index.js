@@ -7,6 +7,7 @@ import Reminders from './bottomTabs/Reminders'
 import Contacts from './bottomTabs/Contacts'
 import Orders from './bottomTabs/Orders'
 import Account from './bottomTabs/Account'
+import Notifications from './Notifications'
 
 export {
     Login,
@@ -17,5 +18,6 @@ export {
     Reminders,
     Contacts,
     Orders,
-    Account
+    Account,
+    Notifications
 }

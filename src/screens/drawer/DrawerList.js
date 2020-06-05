@@ -99,6 +99,7 @@ export default class DrawerList extends Component {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="Notifications"
+                            onPress={() => this.props.navigation.navigate('Notifications')}
                         />
                     </View>
 
