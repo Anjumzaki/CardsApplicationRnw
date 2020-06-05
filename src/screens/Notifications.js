@@ -18,7 +18,7 @@ class Notifications extends Component {
                         NotificationText='UserName your card is printed and has been sent to Receivers Name'
                     />
                     <NotificationCard 
-                        cardImage={Images.inactiveAccount}
+                        cardImage={Images.User_Icon_White}
                         NotificationText='UserName your card is printed and has been sent to Receivers Name'
                     />
                 </View>
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         width: screenWidth,
         height: screenHeight,
         flex: 1,
-        alignItems: "center"
+        alignItems: "center",
+        marginTop: 10
     },
 })
 

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, TouchableOpacity, Dimensions, Text} from 'react-native';
-import {Colors} from '../constants'
+import {Colors, Images} from '../constants'
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-export default ({style, onPressCard, cardImage, NotificationText}) => {
+export default ({style, onPressCard, cardImage, ContactName}) => {
     return(
         <TouchableOpacity 
             style={[styles.Card, style]}
@@ -20,9 +20,17 @@ export default ({style, onPressCard, cardImage, NotificationText}) => {
                         resizeMode= 'contain'
                     />
                 </View>
-                <Text style={styles.NotificationText}>
-                    {NotificationText}
-                </Text>
+
+                <View style={{flexDirection: "row", width: '80%', justifyContent: "space-between", alignItems: "center"}}>
+                    <Text style={styles.ContactName}>
+                        {ContactName}
+                    </Text>
+                    <Image
+                        source={Images.Contacts}
+                        style={{height:30, width: 30}}
+                        resizeMode= 'contain'
+                    />
+                </View>
             </View>
 
         </TouchableOpacity>
@@ -53,9 +61,10 @@ const styles = StyleSheet.create({
         padding: 8,
         backgroundColor: Colors.input
     },
-    NotificationText:{
-        fontSize:14,
+    ContactName:{
+        fontSize:16,
         color: Colors.black,
+        fontWeight: "bold",
         paddingHorizontal: 10,
         flexShrink: 1
     },

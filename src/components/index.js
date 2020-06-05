@@ -5,6 +5,7 @@ import Card from './Card';
 import SmallButton from './SmallButton';
 import OrderCard from './OrderCard';
 import NotificationCard from './NotificationCard'
+import ContactsCard from './ContactsCard'
 
 export {
     Button,
@@ -13,5 +14,6 @@ export {
     Card,
     SmallButton,
     OrderCard,
-    NotificationCard
+    NotificationCard,
+    ContactsCard
 }
