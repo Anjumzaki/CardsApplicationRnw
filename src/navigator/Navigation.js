@@ -5,8 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications } from '../screens';
-import Images from '../constants/Images';
-import Colors from  '../constants/Colors'
+import {Images, Colors} from '../constants';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -74,7 +73,8 @@ StackNavigator= ({navigation}) => {
         <Stack.Screen 
             name="DrawerScreen" 
             children={createBottomTab} 
-            options={{ 
+            options={({route}) => ({
+                 
                 headerTitleAlign: 'center',
                 headerBackTitle:'none',
                 headerTitle: '',
@@ -102,7 +102,8 @@ StackNavigator= ({navigation}) => {
                         />
                     </TouchableOpacity>
                 ),
-            }}
+            })
+        }
         />
         <Stack.Screen
             name = "Notifications"

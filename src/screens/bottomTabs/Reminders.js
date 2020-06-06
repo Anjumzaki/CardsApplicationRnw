@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, TextInput, Text, Image, Dimensions, ImageBackground} from 'react-native';
+import {StyleSheet, View, TextInput, Text, Image, Dimensions, ScrollView} from 'react-native';
+import ReminderCard from '../../components/ReminderCard';
+import { Images } from '../../constants';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
@@ -8,9 +10,14 @@ class Reminders extends Component {
 
     render() {
         return (
-            <View style={styles.Container}>
-                <Text>Reminders</Text>
-            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+
+                <View style={styles.Container}>
+                    <ReminderCard 
+                        cardImage={Images.User_Icon_White}
+                    />
+                </View>
+            </ScrollView>
         );
     }
 }
@@ -20,7 +27,6 @@ const styles = StyleSheet.create({
         width: screenWidth,
         height: screenHeight,
         flex: 1,
-        justifyContent: "center",
         alignItems: "center"
     },
 })
