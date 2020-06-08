@@ -56,7 +56,7 @@ export default ({style, onPress, cardImage, favouriteImage}) => {
 
 const styles = StyleSheet.create({
     Card:{
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.primary,
         borderRadius: 10,
         height: 250,
         width: screenWidth/2.2
