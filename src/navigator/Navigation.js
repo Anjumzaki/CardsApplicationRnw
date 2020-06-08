@@ -4,9 +4,8 @@ import {Image, TouchableOpacity} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans } from '../screens';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs } from '../screens';
 import {Images, Colors} from '../constants';
-import ContactUs from '../screens/ContactUs';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
