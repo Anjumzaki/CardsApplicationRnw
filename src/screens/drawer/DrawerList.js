@@ -112,6 +112,7 @@ export default class DrawerList extends Component {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="Plans"
+                            onPress={() => this.props.navigation.navigate('Plans')}
                         />
                     </View>
 
@@ -124,6 +125,7 @@ export default class DrawerList extends Component {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="Contact Us"
+                            onPress={() => this.props.navigation.navigate('ContactUs')}
                         />
                     </View>
 
@@ -136,6 +138,7 @@ export default class DrawerList extends Component {
                         <DrawerItem
                             labelStyle={styles.label}
                             label="Logout"
+                            onPress={() => this.props.navigation.navigate('Login')}
                         />
                     </View>
 

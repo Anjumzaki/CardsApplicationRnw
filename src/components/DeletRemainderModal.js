@@ -28,11 +28,13 @@ export default  ({deleteModalVisible, deleteModalClose, noButtonPress, yesButton
                     style={{backgroundColor:Colors.primary, color: Colors.white, marginLeft: 20, marginRight:20}}
                     ButtonText='No'
                     buttonPress= {noButtonPress}
+                    textStyle={{color: Colors.white}}
                 />
                 <SmallButton
                     style={{backgroundColor:Colors.primary, color: Colors.white, marginLeft: 20, marginRight:20}}
                     ButtonText='Yes'
                     buttonPress= {yesButtonPress}
+                    textStyle={{color: Colors.white}}
                 />
             </View>
 

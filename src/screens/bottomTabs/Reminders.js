@@ -45,6 +45,7 @@ class Reminders extends Component {
                             ClientName='Chad Focus'
                             GiftDate='Thurs 20,March,1978'
                             FavouriteDate='Thurs 20,March,1978'
+                            deleteButton= {() => this.deleteOpenModal()}
                         />
                     </View>
 

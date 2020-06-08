@@ -27,7 +27,8 @@ const Images = {
     Fav_Unfill: require('../../assets/Fav_Unfill.png'),
     Filter: require('../../assets/Filter.png'),
     Contacts: require('../../assets/Contacts.png'),
-    Giftbox: require('../../assets/Giftbox.png')
+    Giftbox: require('../../assets/Giftbox.png'),
+    Subcription_Bg: require('../../assets/Subcription_Bg.png')
 }
 
 export default Images;

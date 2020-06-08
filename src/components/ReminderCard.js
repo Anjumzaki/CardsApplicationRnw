@@ -58,10 +58,12 @@ export default ({style, deleteButton, cardImage, ClientName, GiftDate,FavouriteD
                             style={{backgroundColor: Colors.primary, color: Colors.white}}
                             ButtonText='Delete'
                             buttonPress= {deleteButton}
+                            textStyle={{color: Colors.white}}
                         />
                         <SmallButton
                             style={{backgroundColor: Colors.primary, color: Colors.white}}
                             ButtonText='Send Card'
+                            textStyle={{color: Colors.white}}
                         />
                     </View>
                 </View>

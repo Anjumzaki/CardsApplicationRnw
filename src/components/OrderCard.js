@@ -31,6 +31,7 @@ export default ({style, onPressCard, cardImage, favouriteImage}) => {
                     <SmallButton
                         style={{backgroundColor: Colors.primary, color: Colors.white}}
                         ButtonText= 'REORDER'
+                        textStyle={{color: Colors.white}}
                     />
                 </View>
             </View>

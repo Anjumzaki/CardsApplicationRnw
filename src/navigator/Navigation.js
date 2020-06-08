@@ -4,8 +4,9 @@ import {Image, TouchableOpacity} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications } from '../screens';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans } from '../screens';
 import {Images, Colors} from '../constants';
+import ContactUs from '../screens/ContactUs';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -111,6 +112,30 @@ StackNavigator= ({navigation}) => {
             options={{
                 headerBackTitle:'none',
                 headerTitle: 'Notifications',
+                headerTintColor: Colors.white,
+                headerStyle:{
+                    backgroundColor: Colors.primary
+                }
+            }}
+        />
+        <Stack.Screen
+            name = "ContactUs"
+            component={ContactUs}
+            options={{
+                headerBackTitle:'none',
+                headerTitle: 'Contact Us',
+                headerTintColor: Colors.white,
+                headerStyle:{
+                    backgroundColor: Colors.primary
+                }
+            }}
+        />
+        <Stack.Screen
+            name = "Plans"
+            component={Plans}
+            options={{
+                headerBackTitle:'none',
+                headerTitle: 'My Plans',
                 headerTintColor: Colors.white,
                 headerStyle:{
                     backgroundColor: Colors.primary
