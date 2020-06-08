@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     Icon:{
         marginLeft:5,
         marginRight:5,
-        height: 160,
+        height: 150,
         width: screenWidth/2.4,
         paddingHorizontal: 10,
         backgroundColor: Colors.white
@@ -76,13 +76,12 @@ const styles = StyleSheet.create({
     },
     vertical:{
         flexDirection: 'column',
-        paddingHorizontal: 5,
-        paddingBottom: 5
+        paddingHorizontal: 10,
     },
     horizontal:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingVertical:3
+        paddingVertical: 5
     },
     DishName:{
         fontWeight: 'bold',

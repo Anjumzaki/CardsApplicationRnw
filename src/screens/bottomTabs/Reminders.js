@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, TextInput, Text, Image, Dimensions, ScrollView} from 'react-native';
+import {StyleSheet, View, TextInput, Text, Image, Dimensions, ScrollView, TouchableOpacity} from 'react-native';
 import ReminderCard from '../../components/ReminderCard';
 import { Images, Colors } from '../../constants';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import SetReminderModal from '../../components/SetReminderModal';
-import DeletRemainderModal from '../../components/DeletRemainderModal';
+import {SetReminderModal, DeletRemainderModal} from '../../components';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;

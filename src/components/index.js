@@ -4,8 +4,10 @@ import SocialIcons from './SocialIcons';
 import Card from './Card';
 import SmallButton from './SmallButton';
 import OrderCard from './OrderCard';
-import NotificationCard from './NotificationCard'
-import ContactsCard from './ContactsCard'
+import NotificationCard from './NotificationCard';
+import ContactsCard from './ContactsCard';
+import DeletRemainderModal from './DeletRemainderModal';
+import SetReminderModal from './SetReminderModal'
 
 export {
     Button,
@@ -15,5 +17,7 @@ export {
     SmallButton,
     OrderCard,
     NotificationCard,
-    ContactsCard
+    ContactsCard,
+    DeletRemainderModal,
+    SetReminderModal
 }

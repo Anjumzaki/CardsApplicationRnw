@@ -17,30 +17,30 @@ createBottomTab  = () => {
     <BottomTab.Navigator
         initialRouteName="Home"
         tabBarOptions={{activeTintColor: Colors.primary}}
-    screenOptions={({ route }) => ({
-        tabBarIcon: ({ color, size }) => {
-            let activeIcon, inactiveIcon;
+        screenOptions={({ route }) => ({
+            tabBarIcon: ({ color, size }) => {
+                let activeIcon, inactiveIcon;
 
-            if(route.name == 'Home'){
-                activeIcon = Images.activeHome;
-                inactiveIcon = Images.inactiveHome;
-            }
-            else if(route.name == 'Contacts'){
-                activeIcon = Images.activeContacts;
-                inactiveIcon = Images.inactiveContacts
-            }
-            else if(route.name == 'Reminders'){
-                activeIcon = Images.Reminders;
-                inactiveIcon = Images.inactiveReminders;
-            }
-            else if(route.name == 'Orders'){
-                activeIcon = Images.Orders;
-                inactiveIcon = Images.inactiveOrders;
-            }
-            else if(route.name == 'Account'){
-                activeIcon = Images.activeAccount;
-                inactiveIcon = Images.inactiveAccount; 
-            }
+                if(route.name == 'Home'){
+                    activeIcon = Images.activeHome;
+                    inactiveIcon = Images.inactiveHome;
+                }
+                else if(route.name == 'Contacts'){
+                    activeIcon = Images.activeContacts;
+                    inactiveIcon = Images.inactiveContacts
+                }
+                else if(route.name == 'Reminders'){
+                    activeIcon = Images.Reminders;
+                    inactiveIcon = Images.inactiveReminders;
+                }
+                else if(route.name == 'Orders'){
+                    activeIcon = Images.Orders;
+                    inactiveIcon = Images.inactiveOrders;
+                }
+                else if(route.name == 'Account'){
+                    activeIcon = Images.activeAccount;
+                    inactiveIcon = Images.inactiveAccount; 
+                }
           
             return <Image 
                     source={ color == '#8E8E8F' ? inactiveIcon : activeIcon} style={{width: size, height: size}} 
