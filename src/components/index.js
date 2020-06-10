@@ -6,7 +6,7 @@ import SmallButton from './SmallButton';
 import OrderCard from './OrderCard';
 import NotificationCard from './NotificationCard';
 import ContactsCard from './ContactsCard';
-import DeletRemainderModal from './DeletRemainderModal';
+import DeleteModal from './DeleteModal';
 import SetReminderModal from './SetReminderModal'
 
 export {
@@ -18,6 +18,6 @@ export {
     OrderCard,
     NotificationCard,
     ContactsCard,
-    DeletRemainderModal,
+    DeleteModal,
     SetReminderModal
 }

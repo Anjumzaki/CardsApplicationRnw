@@ -28,7 +28,8 @@ const Images = {
     Filter: require('../../assets/Filter.png'),
     Contacts: require('../../assets/Contacts.png'),
     Giftbox: require('../../assets/Giftbox.png'),
-    Subcription_Bg: require('../../assets/Subcription_Bg.png')
+    Subcription_Bg: require('../../assets/Subcription_Bg.png'),
+    ProfileEdit: require('../../assets/ProfileEdit.png')
 }
 
 export default Images;

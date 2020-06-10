@@ -5,11 +5,11 @@ import {Colors, Images} from '../constants'
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-export default ({style, onPressCard, cardImage, ContactName}) => {
+export default ({style, onLongPressCard, cardImage, ContactName}) => {
     return(
         <TouchableOpacity 
             style={[styles.Card, style]}
-            onPress={onPressCard}
+            onLongPress={onLongPressCard}
         >
 
             <View style={styles.horizontal}> 

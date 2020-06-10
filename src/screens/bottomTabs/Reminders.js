@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, TextInput, Text, Image, Dimensions, ScrollView, TouchableOpacity} from 'react-native';
 import ReminderCard from '../../components/ReminderCard';
 import { Images, Colors } from '../../constants';
-import {SetReminderModal, DeletRemainderModal} from '../../components';
+import {SetReminderModal, DeleteModal} from '../../components';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
@@ -11,19 +11,20 @@ class Reminders extends Component {
     state={
         setReminderModalVisible: false,
         deleteReminderModalVisible: false,
+        backgroundColor: Colors.white,
         opacity: 1
     }
     setReminderOpenModal = () => {
-        this.setState({ setReminderModalVisible: true, opacity: 0.2 })
+        this.setState({ setReminderModalVisible: true, opacity: 0.1, backgroundColor: Colors.grey})
      }
      setReminderCloseModal = () => {
-        this.setState({ setReminderModalVisible: false, opacity: 1 })
+        this.setState({ setReminderModalVisible: false, opacity: 1, backgroundColor: Colors.white })
      }
      deleteOpenModal = () => {
-        this.setState({ deleteReminderModalVisible: true, opacity: 0.2 })
+        this.setState({ deleteReminderModalVisible: true, opacity: 0.1, backgroundColor: Colors.grey })
      }
      deleteCloseModal = () =>{
-        this.setState({ deleteReminderModalVisible: false, opacity: 1 })
+        this.setState({ deleteReminderModalVisible: false, opacity: 1, backgroundColor: Colors.white })
      }
 
     render() {
@@ -60,7 +61,7 @@ class Reminders extends Component {
                         modalClose= {() => this.setReminderCloseModal()}
                 />
 
-                <DeletRemainderModal
+                <DeleteModal
                     deleteModalVisible = {this.state.deleteReminderModalVisible}
                     deleteModalClose= {() => this.deleteCloseModal()}
                     yesButtonPress={ () => this.deleteCloseModal()}
