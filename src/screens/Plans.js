@@ -104,7 +104,10 @@ const styles = StyleSheet.create({
     Button:{
         backgroundColor: Colors.primary,
         position: "relative",
-        top: '10%'
+        top: '10%',
+        height: 40,
+        justifyContent: "center",
+        alignItems: "center"
     }
 })
 
