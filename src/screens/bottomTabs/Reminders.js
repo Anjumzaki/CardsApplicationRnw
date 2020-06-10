@@ -38,6 +38,7 @@ class Reminders extends Component {
                             GiftDate='Thurs 20,March,1978'
                             FavouriteDate='Thurs 20,March,1978'
                             deleteButton= {() => this.deleteOpenModal()}
+                            sendButton={() => this.props.navigation.navigate('ReceiverInformation')}
                         />
                         <ReminderCard 
                             cardImage={Images.User_Icon_White}
@@ -45,6 +46,7 @@ class Reminders extends Component {
                             GiftDate='Thurs 20,March,1978'
                             FavouriteDate='Thurs 20,March,1978'
                             deleteButton= {() => this.deleteOpenModal()}
+                            sendButton={() => this.props.navigation.navigate('ReceiverInformation')}
                         />
                     </View>
 

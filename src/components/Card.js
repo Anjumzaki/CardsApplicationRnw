@@ -6,7 +6,7 @@ import {SmallButton} from '../components'
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-export default ({style, onPress, cardImage, favouriteImage}) => {
+export default ({style, onPress, cardImage, favouriteImage, sendButton}) => {
     return(
         <View style={[styles.Card, style]}>
             <TouchableOpacity 
@@ -46,6 +46,7 @@ export default ({style, onPress, cardImage, favouriteImage}) => {
                         style={{backgroundColor: Colors.white, color: Colors.primary}}
                         ButtonText= 'Send'
                         textStyle={{color: Colors.primary}}
+                        buttonPress={sendButton}
                     />
                 </View>
             </View>

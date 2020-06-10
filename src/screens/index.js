@@ -10,6 +10,7 @@ import Account from './bottomTabs/Account'
 import Notifications from './Notifications'
 import ContactUs from './ContactUs'
 import Plans from './Plans'
+import ReceiverInformation from './ReceiverInformation'
 
 export {
     Login,
@@ -23,5 +24,6 @@ export {
     Account,
     Notifications,
     ContactUs,
-    Plans
+    Plans,
+    ReceiverInformation
 }

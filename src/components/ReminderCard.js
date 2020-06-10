@@ -6,7 +6,7 @@ import {SmallButton, Input} from '../components'
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-export default ({style, deleteButton, cardImage, ClientName, GiftDate,FavouriteDate, onChangeText, value}) => {
+export default ({style, deleteButton, cardImage, ClientName, GiftDate,FavouriteDate, sendButton, onChangeText, value}) => {
     return(
         <View style={styles.CardContainer}>
             <View style={styles.vertical}>
@@ -64,6 +64,7 @@ export default ({style, deleteButton, cardImage, ClientName, GiftDate,FavouriteD
                             style={{backgroundColor: Colors.primary, color: Colors.white}}
                             ButtonText='Send Card'
                             textStyle={{color: Colors.white}}
+                            buttonPress={sendButton}
                         />
                     </View>
                 </View>
