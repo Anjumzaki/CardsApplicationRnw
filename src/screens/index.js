@@ -11,6 +11,7 @@ import Notifications from './Notifications'
 import ContactUs from './ContactUs'
 import Plans from './Plans'
 import ReceiverInformation from './ReceiverInformation'
+import BillingInformation from './BillingInformation'
 
 export {
     Login,
@@ -25,5 +26,6 @@ export {
     Notifications,
     ContactUs,
     Plans,
-    ReceiverInformation
+    ReceiverInformation,
+    BillingInformation
 }

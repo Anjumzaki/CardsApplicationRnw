@@ -29,7 +29,11 @@ const Images = {
     Contacts: require('../../assets/Contacts.png'),
     Giftbox: require('../../assets/Giftbox.png'),
     Subcription_Bg: require('../../assets/Subcription_Bg.png'),
-    ProfileEdit: require('../../assets/ProfileEdit.png')
+    ProfileEdit: require('../../assets/ProfileEdit.png'),
+    mastercard: require('../../assets/mastercard.png'),
+    maestro: require('../../assets/maestro.png'),
+    visa1: require('../../assets/visa1.png'),
+    visa2: require('../../assets/visa2.png'),
 }
 
 export default Images;

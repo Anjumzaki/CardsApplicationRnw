@@ -32,6 +32,7 @@ class Orders extends Component {
                                 style={styles.Button}
                                 ButtonText= "Subscribe"
                                 textStyle={{color: Colors.white}}
+                                buttonPress={ () => this.props.navigation.navigate('BillingInformation')}
                             />
                         </View>
                     </ImageBackground>

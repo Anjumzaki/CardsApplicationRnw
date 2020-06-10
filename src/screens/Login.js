@@ -48,6 +48,7 @@ class Login extends Component {
                         <Input 
                             style={{marginTop: 10}}
                             placeholder= 'Password'
+                            secureTextEntry= {true}
                             onChangeText = {this.handlePassword}
                         />
                         <Button 

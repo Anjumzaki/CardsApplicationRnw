@@ -7,7 +7,10 @@ import OrderCard from './OrderCard';
 import NotificationCard from './NotificationCard';
 import ContactsCard from './ContactsCard';
 import DeleteModal from './DeleteModal';
-import SetReminderModal from './SetReminderModal'
+import SetReminderModal from './SetReminderModal';
+import CreateContactModal from './CreateContactModal';
+import SquareInput from './SquareInput';
+import ReminderCard from './ReminderCard';
 
 export {
     Button,
@@ -19,5 +22,8 @@ export {
     NotificationCard,
     ContactsCard,
     DeleteModal,
-    SetReminderModal
+    SetReminderModal,
+    SquareInput,
+    CreateContactModal,
+    ReminderCard
 }

@@ -4,7 +4,7 @@ import {Image, TouchableOpacity} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation } from '../screens';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation, BillingInformation } from '../screens';
 import {Images, Colors} from '../constants';
 
 const Stack = createStackNavigator();
@@ -147,6 +147,18 @@ StackNavigator= ({navigation}) => {
             options={{
                 headerBackTitle:'none',
                 headerTitle: 'Address',
+                headerTintColor: Colors.white,
+                headerStyle:{
+                    backgroundColor: Colors.primary
+                }
+            }}
+        />
+        <Stack.Screen
+            name = "BillingInformation"
+            component={BillingInformation}
+            options={{
+                headerBackTitle:'none',
+                headerTitle: 'Billing Information',
                 headerTintColor: Colors.white,
                 headerStyle:{
                     backgroundColor: Colors.primary
