@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity, Text} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation, BillingInformation } from '../screens';
 import {Images, Colors} from '../constants';
+import EditProfile from '../screens/EditProfile';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -165,7 +166,24 @@ StackNavigator= ({navigation}) => {
                 }
             }}
         />
-      </Stack.Navigator>
+        <Stack.Screen 
+            name="EditProfile" 
+            component={EditProfile} 
+            options={{
+                headerTitleAlign: 'center',
+                headerBackTitle:'none',
+                headerTitle: '',
+                headerRight: () => (
+                    <TouchableOpacity 
+                        style={{padding:15}}
+                        onPress = {() => navigation.navigate('DrawerScreen')}
+                    >
+                        <Text style={{color: Colors.primary, fontSize: 20}}>Save</Text>
+                    </TouchableOpacity>
+                ),
+            }}
+        />
+    </Stack.Navigator>
     );
   }
 

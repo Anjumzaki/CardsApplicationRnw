@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         borderBottomColor: Colors.input,
     },
     inputBox:{
-        padding: 5,
+        padding: 2,
         fontSize:16
     }  
 })

@@ -19,7 +19,10 @@ class Account extends Component {
                                 style={styles.Profile}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.Edit}>
+                        <TouchableOpacity 
+                            onPress={() => this.props.navigation.navigate('EditProfile')}
+                            style={styles.Edit}
+                        >
                             <Text style={styles.EditText}>Edit</Text>
                         </TouchableOpacity>
                     </View>
