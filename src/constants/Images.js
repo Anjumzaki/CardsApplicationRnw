@@ -38,7 +38,9 @@ const Images = {
     Text_Color: require('../../assets/Text_Color.png'),
     Stylus: require('../../assets/Stylus.png'),
     Pointer: require('../../assets/Pointer.png'),
-    Fav_UnfillGreen: require('../../assets/Fav_UnfillGreen.png')
+    Fav_UnfillGreen: require('../../assets/Fav_UnfillGreen.png'),
+    Send: require('../../assets/Send.png'),
+    Share: require('../../assets/Share.png')
 }
 
 export default Images;
