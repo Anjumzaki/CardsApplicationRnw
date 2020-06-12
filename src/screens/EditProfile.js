@@ -2,11 +2,31 @@ import React, {Component} from 'react';
 import {StyleSheet, View, TouchableOpacity, Text, Dimensions, ScrollView, Image} from 'react-native';
 import { Input, SmallButton } from '../components';
 import { Colors, Images } from '../constants';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
 class EditProfile extends Component {
+    state= {
+        date : new Date(),
+        mode : "date",
+        show : false
+    } 
+    onChange = (event, selectedDate) => {
+      const currentDate = selectedDate || date;
+      this.setState({show: Platform.OS === 'ios'})
+      this.setState({date: currentDate});
+    };
+  
+    showMode = (currentMode) => {
+      this.setState({show: true})
+      this.setState({mode: currentMode})
+    };
+  
+    showDatepicker = () => {
+        this.showMode('date')
+    };
 
     render() {
         return (
@@ -14,7 +34,7 @@ class EditProfile extends Component {
                 <View style={styles.Container}>
 
                     <View style={styles.BaicInfoContainer}>
-                    <Text style={styles.HeadingText}>Basic Information</Text>
+                        <Text style={styles.HeadingText}>Basic Information</Text>
                         <View style={styles.row}>
                             <TouchableOpacity style={styles.profileBackground}>
                                 <Image
@@ -33,11 +53,46 @@ class EditProfile extends Component {
                                 </View>
                             </TouchableOpacity>
 
-                            <View style={styles.Input}>
+                            <View style={styles.NameInput}>
                                 <Text style={styles.name}>Enter Your Name</Text>
                                 <Input 
                                 />
                             </View>
+                        </View>
+                        <View style={styles.row}>
+                            <View style={styles.text}>
+                            <Text>Date of Birth</Text>
+                                <TouchableOpacity  
+                                activeOpacity={0.4}
+                                onPress={() => this.showDatepicker()}
+                                >
+                                <Text style={styles.note}>
+                                    DD | MM | YY
+                                </Text>
+                                </TouchableOpacity>
+                            </View>
+
+                            <View style={styles.text}>
+                                <Text>Date of Anniversary</Text>
+                                <TouchableOpacity  
+                                activeOpacity={0.4}
+                                onPress={() => this.showDatepicker()}
+                                >
+                                <Text style={styles.note}>
+                                    DD | MM | YY
+                                </Text>
+                                </TouchableOpacity>
+                            </View>
+                            {this.state.show && (
+                            <DateTimePicker
+                                testID="dateTimePicker"
+                                value={this.state.date}
+                                mode={this.state.mode}
+                                is24Hour={true}
+                                display="default"
+                                // onChange={onChange}
+                            />
+                            )}
                         </View>
                     </View>
 
@@ -111,7 +166,6 @@ class EditProfile extends Component {
 const styles = StyleSheet.create({
     Container:{
         width: screenWidth,
-        height: screenHeight,
         flex: 1,
         alignItems: "center",
     },
@@ -128,6 +182,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         height: 70,
         width: 70,
+        marginLeft: 50
     },
     profile:{
         position: "relative",
@@ -156,6 +211,12 @@ const styles = StyleSheet.create({
     addImage:{
         height: 10,
     },
+    NameInput:{
+        fontSize: 16,
+        color: Colors.grey,
+        width: '80%',
+        marginLeft: 100
+    },
     name:{
         fontSize: 16,
         color: Colors.grey
@@ -179,7 +240,11 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         paddingBottom: 20,
         marginBottom: 5,
-        paddingTop: 10
+        paddingTop: 10,
+        width: '95%'
+    },
+    InfoContainer:{
+        marginBottom: 50
     },
     HeadingText:{
         fontSize: 22,

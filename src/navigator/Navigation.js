@@ -4,7 +4,7 @@ import {Image, TouchableOpacity, Text} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation, BillingInformation } from '../screens';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation, BillingInformation, EditCard } from '../screens';
 import {Images, Colors} from '../constants';
 import EditProfile from '../screens/EditProfile';
 
@@ -60,130 +60,142 @@ createBottomTab  = () => {
 
 StackNavigator= ({navigation}) => {
     return (
-    <Stack.Navigator>
-        <Stack.Screen
-            name = "Login"
-            component={Login}
-            options={{headerShown: false}}
-        />
-        <Stack.Screen
-            name = "Signup"
-            component={Signup}
-            options={{headerShown: false}}
-        />
-        <Stack.Screen 
-            name="DrawerScreen" 
-            children={createBottomTab} 
-            options={({route}) => ({
-                 
-                headerTitleAlign: 'center',
-                headerBackTitle:'none',
-                headerTitle: '',
-                headerRight: () => (
-                    <TouchableOpacity 
-                        style={{padding:15}}
-                        onPress = {() => navigation.navigate('Notifications')}
-                    >
-                        <Image
-                            source={Images.Notification}
-                            resizeMode= 'contain'
-                            style={{height:25, width:25}} 
-                        />
-                    </TouchableOpacity>
-                ),
-                headerLeft:  () => (
-                    <TouchableOpacity 
-                        style={{padding:15}}
-                        onPress = {() => navigation.openDrawer()}
-                    >
-                        <Image
-                            source={Images.menu}
-                            resizeMode= 'contain'
-                            style={{height:25, width:25}} 
-                        />
-                    </TouchableOpacity>
-                ),
-            })
-        }
-        />
-        <Stack.Screen
-            name = "Notifications"
-            component={Notifications}
+        <Stack.Navigator>
+            <Stack.Screen
+                name = "Login"
+                component={Login}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name = "Signup"
+                component={Signup}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen 
+                name="DrawerScreen" 
+                children={createBottomTab} 
+                options={({route}) => ({
+                    
+                    headerTitleAlign: 'center',
+                    headerBackTitle:'none',
+                    headerTitle: '',
+                    headerRight: () => (
+                        <TouchableOpacity 
+                            style={{padding:15}}
+                            onPress = {() => navigation.navigate('Notifications')}
+                        >
+                            <Image
+                                source={Images.Notification}
+                                resizeMode= 'contain'
+                                style={{height:25, width:25}} 
+                            />
+                        </TouchableOpacity>
+                    ),
+                    headerLeft:  () => (
+                        <TouchableOpacity 
+                            style={{padding:15}}
+                            onPress = {() => navigation.openDrawer()}
+                        >
+                            <Image
+                                source={Images.menu}
+                                resizeMode= 'contain'
+                                style={{height:25, width:25}} 
+                            />
+                        </TouchableOpacity>
+                    ),
+                })
+            }
+            />
+            <Stack.Screen
+                name = "Notifications"
+                component={Notifications}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'Notifications',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
+            <Stack.Screen
+                name = "ContactUs"
+                component={ContactUs}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'Contact Us',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
+            <Stack.Screen
+                name = "Plans"
+                component={Plans}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'My Plans',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
+            <Stack.Screen
+                name = "ReceiverInformation"
+                component={ReceiverInformation}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'Address',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
+            <Stack.Screen
+                name = "BillingInformation"
+                component={BillingInformation}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'Billing Information',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
+            <Stack.Screen 
+                name="EditProfile" 
+                component={EditProfile} 
+                options={{
+                    headerTitleAlign: 'center',
+                    headerBackTitle:'none',
+                    headerTitle: '',
+                    headerRight: () => (
+                        <TouchableOpacity 
+                            style={{padding:15}}
+                            onPress = {() => navigation.goBack()}
+                        >
+                            <Text style={{color: Colors.primary, fontSize: 20}}>Save</Text>
+                        </TouchableOpacity>
+                    ),
+                }}
+            />
+            <Stack.Screen
+            name = "EditCard"
+            component={EditCard}
             options={{
                 headerBackTitle:'none',
-                headerTitle: 'Notifications',
+                headerTitle: 'Edit Card',
                 headerTintColor: Colors.white,
                 headerStyle:{
                     backgroundColor: Colors.primary
                 }
             }}
         />
-        <Stack.Screen
-            name = "ContactUs"
-            component={ContactUs}
-            options={{
-                headerBackTitle:'none',
-                headerTitle: 'Contact Us',
-                headerTintColor: Colors.white,
-                headerStyle:{
-                    backgroundColor: Colors.primary
-                }
-            }}
-        />
-        <Stack.Screen
-            name = "Plans"
-            component={Plans}
-            options={{
-                headerBackTitle:'none',
-                headerTitle: 'My Plans',
-                headerTintColor: Colors.white,
-                headerStyle:{
-                    backgroundColor: Colors.primary
-                }
-            }}
-        />
-        <Stack.Screen
-            name = "ReceiverInformation"
-            component={ReceiverInformation}
-            options={{
-                headerBackTitle:'none',
-                headerTitle: 'Address',
-                headerTintColor: Colors.white,
-                headerStyle:{
-                    backgroundColor: Colors.primary
-                }
-            }}
-        />
-        <Stack.Screen
-            name = "BillingInformation"
-            component={BillingInformation}
-            options={{
-                headerBackTitle:'none',
-                headerTitle: 'Billing Information',
-                headerTintColor: Colors.white,
-                headerStyle:{
-                    backgroundColor: Colors.primary
-                }
-            }}
-        />
-        <Stack.Screen 
-            name="EditProfile" 
-            component={EditProfile} 
-            options={{
-                headerTitleAlign: 'center',
-                headerBackTitle:'none',
-                headerTitle: '',
-                headerRight: () => (
-                    <TouchableOpacity 
-                        style={{padding:15}}
-                        onPress = {() => navigation.navigate('DrawerScreen')}
-                    >
-                        <Text style={{color: Colors.primary, fontSize: 20}}>Save</Text>
-                    </TouchableOpacity>
-                ),
-            }}
-        />
-    </Stack.Navigator>
+        </Stack.Navigator>
     );
   }
 

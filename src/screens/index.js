@@ -12,6 +12,7 @@ import ContactUs from './ContactUs'
 import Plans from './Plans'
 import ReceiverInformation from './ReceiverInformation'
 import BillingInformation from './BillingInformation'
+import EditCard from './EditCard'
 
 export {
     Login,
@@ -27,5 +28,6 @@ export {
     ContactUs,
     Plans,
     ReceiverInformation,
-    BillingInformation
+    BillingInformation,
+    EditCard
 }

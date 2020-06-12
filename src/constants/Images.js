@@ -34,6 +34,11 @@ const Images = {
     maestro: require('../../assets/maestro.png'),
     visa1: require('../../assets/visa1.png'),
     visa2: require('../../assets/visa2.png'),
+    Text: require('../../assets/Text.png'),
+    Text_Color: require('../../assets/Text_Color.png'),
+    Stylus: require('../../assets/Stylus.png'),
+    Pointer: require('../../assets/Pointer.png'),
+    Fav_UnfillGreen: require('../../assets/Fav_UnfillGreen.png')
 }
 
 export default Images;

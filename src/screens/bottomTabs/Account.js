@@ -51,8 +51,8 @@ class Account extends Component {
 const styles = StyleSheet.create({
     Container:{
         width: screenWidth,
-        height: screenHeight,
         flex: 1,
+        paddingBottom: 20
     },
     ProfileView:{
         justifyContent: "center",

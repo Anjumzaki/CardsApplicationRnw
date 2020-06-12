@@ -6,7 +6,7 @@ import {SmallButton} from '../components'
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
-export default ({style, onPress, cardImage, favouriteImage, sendButton}) => {
+export default ({style, onPress, cardOnPress, cardImage, favouriteImage, sendButton}) => {
     return(
         <View style={[styles.Card, style]}>
             <TouchableOpacity 
@@ -20,13 +20,16 @@ export default ({style, onPress, cardImage, favouriteImage, sendButton}) => {
                 />
             </TouchableOpacity>
 
-            <View style={styles.image}>
+            <TouchableOpacity
+                activeOpacity={0.7} 
+                onPress= {cardOnPress}
+                style={styles.image}>
                 <Image
                     source= {cardImage}
                     resizeMode={'contain'}
-                    style={styles.Icon}
+                    style={styles.cardImage}
                 />
-            </View>
+            </TouchableOpacity>
             
             <View style={styles.vertical}>
                 <View style={styles.horizontal}> 
@@ -63,17 +66,22 @@ const styles = StyleSheet.create({
         height: 250,
         width: screenWidth/2.2
     },
-    Icon:{
-        marginLeft:5,
-        marginRight:5,
-        height: 150,
-        width: screenWidth/2.4,
-        paddingHorizontal: 10,
-        backgroundColor: Colors.white
-    },
     image:{
         flex:1, 
         alignItems: "center",
+        justifyContent: "center",
+        marginLeft:5,
+        marginRight:5,
+        height: 150,
+        backgroundColor: Colors.white
+    
+    },
+    cardImage:{
+        marginLeft:5,
+        marginRight:5,
+        height: 140,
+        paddingHorizontal: 10,
+        width:'90%',
     },
     vertical:{
         flexDirection: 'column',

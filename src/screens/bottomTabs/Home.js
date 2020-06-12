@@ -45,11 +45,13 @@ class Home extends Component {
                     <View style={styles.CardContainer}>
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)}
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}     
                         />
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)}  
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}        
                         />
@@ -59,11 +61,13 @@ class Home extends Component {
                     <View style={styles.CardContainer}>
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)} 
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}    
                         />
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)} 
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}         
                         />
