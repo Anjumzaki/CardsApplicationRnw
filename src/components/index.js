@@ -11,6 +11,7 @@ import SetReminderModal from './SetReminderModal';
 import CreateContactModal from './CreateContactModal';
 import SquareInput from './SquareInput';
 import ReminderCard from './ReminderCard';
+import ThankyouModal from './ThankyouModal';
 
 export {
     Button,
@@ -25,5 +26,6 @@ export {
     SetReminderModal,
     SquareInput,
     CreateContactModal,
-    ReminderCard
+    ReminderCard,
+    ThankyouModal
 }

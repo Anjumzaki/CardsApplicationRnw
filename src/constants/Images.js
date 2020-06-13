@@ -40,7 +40,8 @@ const Images = {
     Pointer: require('../../assets/Pointer.png'),
     Fav_UnfillGreen: require('../../assets/Fav_UnfillGreen.png'),
     Send: require('../../assets/Send.png'),
-    Share: require('../../assets/Share.png')
+    Share: require('../../assets/Share.png'),
+    Card: require('../../assets/Card.png')
 }
 
 export default Images;

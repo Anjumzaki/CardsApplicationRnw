@@ -21,14 +21,19 @@ class Orders extends Component {
                         <View style={styles.Line}/>
                     </View>
                 
-                    <OrderCard />
-
-                    <OrderCard />
-
-                    <OrderCard />
-
-                    <OrderCard />
-
+                    <OrderCard 
+                        onPressCard={() => this.props.navigation.navigate('OrderDetails')}
+                    />
+                    <OrderCard 
+                        onPressCard={() => this.props.navigation.navigate('OrderDetails')}
+                    />
+                    <OrderCard 
+                        onPressCard={() => this.props.navigation.navigate('OrderDetails')}
+                    />
+                    <OrderCard 
+                        onPressCard={() => this.props.navigation.navigate('OrderDetails')}
+                    />
+                
                 </View>
             </ScrollView>
         );

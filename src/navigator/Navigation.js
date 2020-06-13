@@ -4,7 +4,7 @@ import {Image, TouchableOpacity, Text} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation, BillingInformation, EditCard } from '../screens';
+import { Login, Signup, DrawerList, DrawerScreen, Home, Contacts, Reminders, Orders, Account, Notifications, Plans, ContactUs, ReceiverInformation, BillingInformation, EditCard, OrderDetails } from '../screens';
 import {Images, Colors} from '../constants';
 import EditProfile from '../screens/EditProfile';
 
@@ -184,17 +184,29 @@ StackNavigator= ({navigation}) => {
                 }}
             />
             <Stack.Screen
-            name = "EditCard"
-            component={EditCard}
-            options={{
-                headerBackTitle:'none',
-                headerTitle: 'Edit Card',
-                headerTintColor: Colors.white,
-                headerStyle:{
-                    backgroundColor: Colors.primary
-                }
-            }}
-        />
+                name = "EditCard"
+                component={EditCard}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'Edit Card',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
+            <Stack.Screen
+                name = "OrderDetails"
+                component={OrderDetails}
+                options={{
+                    headerBackTitle:'none',
+                    headerTitle: 'Order Details',
+                    headerTintColor: Colors.white,
+                    headerStyle:{
+                        backgroundColor: Colors.primary
+                    }
+                }}
+            />
         </Stack.Navigator>
     );
   }

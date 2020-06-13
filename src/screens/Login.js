@@ -14,17 +14,17 @@ class Login extends Component {
     handleEmail = (text) => {
         this.setState({ email: text })
      }
-     handlePassword = (text) => {
+    handlePassword = (text) => {
         this.setState({ password: text })
-     }
-     login = (email, password) => {
+    }
+    login = (email, password) => {
         if(email == '' || password == ''){
             alert('Please enter email and password')
         }
         else{
             this.props.navigation.navigate('DrawerScreen')
         }
-     }
+    }
 
     render() {
         return (

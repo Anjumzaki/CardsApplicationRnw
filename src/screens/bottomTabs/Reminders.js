@@ -12,7 +12,8 @@ class Reminders extends Component {
         setReminderModalVisible: false,
         deleteReminderModalVisible: false,
         backgroundColor: Colors.white,
-        opacity: 1
+        opacity: 1,
+        reminderNote: ''
     }
     setReminderOpenModal = () => {
         this.setState({ setReminderModalVisible: true, opacity: 0.1, backgroundColor: Colors.grey})
@@ -26,6 +27,9 @@ class Reminders extends Component {
      deleteCloseModal = () =>{
         this.setState({ deleteReminderModalVisible: false, opacity: 1, backgroundColor: Colors.white })
      }
+     handleReminderNote = (text) => {
+        this.setState({ reminderNote: text })
+     }
 
     render() {
         return (
@@ -37,6 +41,7 @@ class Reminders extends Component {
                             ClientName='Chad Focus'
                             GiftDate='Thurs 20,March,1978'
                             FavouriteDate='Thurs 20,March,1978'
+                            onChangeText= {this.handleReminderNote}
                             deleteButton= {() => this.deleteOpenModal()}
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}
                         />
@@ -45,6 +50,7 @@ class Reminders extends Component {
                             ClientName='Chad Focus'
                             GiftDate='Thurs 20,March,1978'
                             FavouriteDate='Thurs 20,March,1978'
+                            onChangeText= {this.handleReminderNote}
                             deleteButton= {() => this.deleteOpenModal()}
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}
                         />

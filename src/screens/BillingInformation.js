@@ -1,17 +1,27 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, TextInput, Text, Image, Dimensions, ScrollView} from 'react-native';
 import { Colors, Images } from '../constants'
-import { SquareInput, SmallButton } from '../components';
+import { SquareInput, SmallButton, ThankyouModal } from '../components';
 
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
 
 class BillingInformation extends Component {
-
+    state={
+        thankyouModalVisible: false,
+        backgroundColor: Colors.white,
+        opacity: 1,
+    }
+    thankyouOpenModal = () => {
+        this.setState({ thankyouModalVisible: true, opacity: 0.1, backgroundColor: Colors.grey})
+    }
+    thankyouCloseModal = () => {
+        this.setState({ thankyouModalVisible: false, opacity: 1, backgroundColor: Colors.white })
+    }
     render() {
         return (
-            <View style={styles.Container}>
+            <View style={[styles.Container, {opacity: this.state.opacity}]}>
 
                 <View style={styles.Heading}>
                     <View style={styles.Line}/>
@@ -86,6 +96,13 @@ class BillingInformation extends Component {
                     ButtonText= 'Pay'
                     style={styles.payButton}
                     textStyle={{color: Colors.white}}
+                    buttonPress={() => this.thankyouOpenModal()}
+                />
+
+                <ThankyouModal
+                    thankyouModalVisible= {this.state.thankyouModalVisible}
+                    thankyouModalClose= {() => this.thankyouCloseModal()}
+                    okButtonPress={() => this.thankyouCloseModal()}
                 />
             
             </View>
@@ -98,7 +115,7 @@ const styles = StyleSheet.create({
         width: screenWidth,
         height: screenHeight,
         flex: 1,
-        alignItems: "center"
+        alignItems: "center",
     },
     Heading:{
         width: '90%',

@@ -12,20 +12,24 @@ class Contacts extends Component {
         addConatctModalVisible:false,
         deleteReminderModalVisible: false,
         backgroundColor: Colors.white,
-        opacity: 1
+        opacity: 1,
+        searchContact: ''
     }
     addConatctOpenModal = () => {
         this.setState({ addConatctModalVisible: true, opacity: 0.1, backgroundColor: Colors.grey})
     }
     addContactCloseModal = () =>{
         this.setState({ addConatctModalVisible: false, opacity: 1, backgroundColor: Colors.white })
-     }
-     deleteOpenModal = () => {
+    }
+    deleteOpenModal = () => {
         this.setState({ deleteReminderModalVisible: true, opacity: 0.1, backgroundColor: Colors.grey })
-     }
-     deleteCloseModal = () =>{
+    }
+    deleteCloseModal = () =>{
         this.setState({ deleteReminderModalVisible: false, opacity: 1, backgroundColor: Colors.white })
-     }
+    }
+    handleSearchContact = (text) => {
+        this.setState({ searchContact: text })
+    }
 
     render() {
         return (
@@ -37,7 +41,7 @@ class Contacts extends Component {
                             <TextInput 
                                 style={styles.inputBox}
                                 placeholder = 'Search Contacts'
-                                // onChangeText={ onChangeText }
+                                onChangeText={this.handleSearchContact}
                                 // value = { value }
                             />
                             <Image

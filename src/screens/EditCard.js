@@ -12,14 +12,14 @@ class EditCard extends Component {
         favourite: true,
         favouriteImage: Images.Fav_UnfillGreen
     }
-    handleFavourite = (favourite) => {
-        if(favourite == false){
-            this.setState({favouriteImage: Images.Fav_UnfillGreen, favourite: true})
-        }
-        else{
-            this.setState({favouriteImage: Images.Fav_Fill, favourite: false})
-        }
-    }
+    // handleFavourite = (favourite) => {
+    //     if(favourite == false){
+    //         this.setState({favouriteImage: Images.Fav_UnfillGreen, favourite: true})
+    //     }
+    //     else{
+    //         this.setState({favouriteImage: Images.Fav_Fill, favourite: false})
+    //     }
+    // }
 
     render() {
         return (
@@ -104,7 +104,7 @@ class EditCard extends Component {
                     </View>
 
                     <View style={styles.ButtonRow}>
-                    <TouchableOpacity style={{justifyContent: "center", alignItems:"center"}}>
+                        <TouchableOpacity style={{justifyContent: "center", alignItems:"center"}}>
                             <Image
                                 source={Images.Share}
                                 style={styles.Icon}
@@ -112,7 +112,9 @@ class EditCard extends Component {
                             <Text style={{color: Colors.primary}}>Share</Text>
                         </TouchableOpacity>
                         <View style={styles.Line}></View>
-                        <TouchableOpacity style={{justifyContent: "center", alignItems:"center"}}>
+                        <TouchableOpacity 
+                            onPress={() => this.props.navigation.navigate('OrderDetails')}
+                            style={{justifyContent: "center", alignItems:"center"}}>
                             <Image
                                 source={Images.Send}
                                 style={styles.Icon}

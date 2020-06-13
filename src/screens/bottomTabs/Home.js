@@ -11,7 +11,8 @@ let activeIcon, inactiveIcon;
 class Home extends Component {
     state={
         favourite: true,
-        favouriteImage: Images.Fav_Fill
+        favouriteImage: Images.Fav_Fill,
+        filterCard: ''
     }
     handleFavourite = (favourite) => {
         if(favourite == false){
@@ -20,6 +21,9 @@ class Home extends Component {
         else{
             this.setState({favouriteImage: Images.Fav_Fill, favourite: false})
         }
+    }
+    handleFilterCard = (text) => {
+        this.setState({ filterCard: text })
     }
 
     render() {
@@ -31,7 +35,7 @@ class Home extends Component {
                             <TextInput 
                                 style={styles.inputBox}
                                 placeholder = 'Filter Cards'
-                                // onChangeText={ onChangeText }
+                                onChangeText={this.handleFilterCard}
                                 // value = { value }
                             />
                             <Image
@@ -45,12 +49,14 @@ class Home extends Component {
                     <View style={styles.CardContainer}>
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardImage={Images.Card}
                             cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)}
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}     
                         />
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardImage={Images.Card}
                             cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)}  
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}        
@@ -61,12 +67,14 @@ class Home extends Component {
                     <View style={styles.CardContainer}>
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardImage={Images.Card}
                             cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)} 
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}    
                         />
                         <Card 
                             favouriteImage= {this.state.favouriteImage}
+                            cardImage={Images.Card}
                             cardOnPress={() => this.props.navigation.navigate('EditCard')}
                             onPress={() => this.handleFavourite(this.state.favourite)} 
                             sendButton={() => this.props.navigation.navigate('ReceiverInformation')}         
