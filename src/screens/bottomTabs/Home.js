@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, TextInput, Text, Image, Dimensions, ScrollView} from 'react-native';
 import {Card} from '../../components'
 import{Images, Colors}  from '../../constants'
+import {Picker} from '@react-native-community/picker';
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height;
@@ -12,7 +13,8 @@ class Home extends Component {
     state={
         favourite: true,
         favouriteImage: Images.Fav_Fill,
-        filterCard: ''
+        filterCard: '',
+        category: 'Birthday Card'
     }
     handleFavourite = (favourite) => {
         if(favourite == false){
@@ -22,9 +24,6 @@ class Home extends Component {
             this.setState({favouriteImage: Images.Fav_Fill, favourite: false})
         }
     }
-    handleFilterCard = (text) => {
-        this.setState({ filterCard: text })
-    }
 
     render() {
         return (
@@ -32,12 +31,21 @@ class Home extends Component {
                 <View style={styles.Container}>
                     <View style={styles.SearchContainer}>
                         <View style={styles.Search}>
-                            <TextInput 
-                                style={styles.inputBox}
-                                placeholder = 'Filter Cards'
-                                onChangeText={this.handleFilterCard}
-                                // value = { value }
-                            />
+                            <Picker
+                                style={styles.categoryBox}
+                                selectedValue={this.state.category}
+                                onValueChange={(itemValue, itemIndex) =>
+                                    this.setState({category: itemValue})
+                                  }
+                                >
+                                <Picker.Item label="Valentin's Day Card" value="Valentin's Day Card" />
+                                <Picker.Item label="Wedding" value="Wedding" />
+                                <Picker.Item label="Aniversory" value="Aniversory" />
+                                <Picker.Item label="Fathers Day" value="Fathers Day" />
+                                <Picker.Item label="Mothers Day" value="Mothers Day" />
+                                <Picker.Item label="Friendship" value="Friendship" />
+                                <Picker.Item label="Engagement" value="Engagement" />
+                            </Picker>
                             <Image
                                 source={Images.Filter}
                                 style={{height:20, width: 20}}
@@ -105,7 +113,7 @@ const styles = StyleSheet.create({
     SearchContainer:{
         borderColor: Colors.primary,
         borderWidth:2,
-        height: 40,
+        height: 45,
         borderRadius: 10,
         width: '90%',
         marginTop: 20,
@@ -116,9 +124,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center"
     },
-    inputBox:{
+    categoryBox:{
         width: '86%',
-        padding: 5,
+        padding: 2,
+        height: 45,
         fontSize:16,
     }  
 })
